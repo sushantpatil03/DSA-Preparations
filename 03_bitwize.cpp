@@ -12,5 +12,6 @@ int main(){
     cout << "\na ^ b = " << (a^b);    
 
     return 0;
+    
 }
 

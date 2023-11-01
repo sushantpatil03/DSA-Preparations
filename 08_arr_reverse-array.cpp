@@ -1,16 +1,19 @@
 #include <iostream>
 using namespace std;
 
-void swapAlternate(int arr[], int n){
-    int end = 1;
-    while(end<=n-1){
-        swap(arr[end-1],arr[end]);
-        end = end + 2;
+void reverseArray(int arr[], int n){
+    int start = 0;
+    int end = n-1;
+    while(start<=end){
+        swap(arr[start],arr[end]);
+        start = start + 1;
+        end = end - 1;
     }
 }
 
 int main(){
 
+    
     int n = 5;
     int arr[1000] = {0};
 
@@ -19,7 +22,7 @@ int main(){
         cin >> arr[i];
     }
 
-    swapAlternate(arr,n);
+    reverseArray(arr,n);
 
     cout << '\n';
     for(int i=0; i<n; i++){

@@ -3,7 +3,7 @@ using namespace std;
 
 int main(){
 
-    int n = 15;
+    int n = 10;
     int arr[n] = {0};
 
     cout << "Enter values to the array : ";
@@ -19,6 +19,12 @@ int main(){
         if(arr[i] < min){
             min = arr[i];
         }
+    }
+
+    cout << '\n';
+    for(int i=0; i<n; i++){
+        // cout << "Hello Noob";
+        cout << '\t' << arr[i];
     }
 
     cout << "\nThe Maximum element is : " << max ;

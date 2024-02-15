@@ -2,7 +2,7 @@
 // the number is even; if it's 1, the number is odd.
 
 if (x & 1) {
-    // x is odd
+    // x is odd 1,3,5
 } else {
-    // x is even
+    // x is even 0,2,4
 }

@@ -9,7 +9,12 @@ int main(){
     cout << "\na & b = " << (a&b);    
     cout << "\na | b = " << (a|b);    
     cout << "\na ~ b = " << ~a;    
-    cout << "\na ^ b = " << (a^b);    
+    cout << "\na ^ b = " << (a^b);
+
+    string s1 = "abc";    
+    string s2 = "def";    
+
+    cout << "\n"<< s1&s2;
 
     return 0;
     

@@ -1,31 +1,25 @@
 #include <iostream>
 using namespace std;
 
-void update(int& n){
-    n++;
+int count(int arr[], int n){
+    if(n==0){
+        return arr[n];
+    }
+
+    int smallerProblem = count(arr+1, n-1);
+    int biggerProblem = arr[0] + smallerProblem;
+
+    // cout << biggerProblem << endl;
+
+    return biggerProblem;
 }
+
 
 int main(){
 
-    // int n;
-    // cout << "\nEnter a number : ";
-    // cin >> n;
+    int arr[5] = {10,20,30,40,50};
 
-    // int i = 5;
-    // int &j = i;
-
-    // j++;
-    // i++;
-
-    // cout << j << endl;
-
-    int n = 5;
-    update(n);
-    cout << n << endl;
-
-    
-
-
+    cout << count(arr,4);
 
     return 0;
 }

@@ -17,7 +17,7 @@ int main(){
     string s = "abcdefg";
     int st = 0;
     int end = s.size()-1;
-    cout << reverseString(s, n);
+    cout << reverseString(s, st, end );
 
     
     return 0;

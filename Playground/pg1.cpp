@@ -1,57 +1,29 @@
 #include <iostream>
 using namespace std;
 
-long long int binarySearchint(int n){
-    int st = 0;
-    int end = n;
-    long long int mid = st+(end-st)/2;
-    long long int res = 0;
-    while(st<=end){
-        long long int temp = mid*mid;
-        if(temp == n){
-            return mid;
-        }else if(temp > n){
-            end = mid - 1;
-        }else{
-            res = mid;
-            st = mid +1;
-        }
-        mid = st + (end-st)/2;
-    }
-    return res;
-}
+void change(int *arr,int n){
 
-float square(float n){
-    return n*n;
-}
-
-float findPrecision(float x,float n){
-    float res = 0;
-    float st = 0.1;
-    float end = 0.99;
-    float mid = st + (end-st)/2;
-    while(st<=end){
-        float temp = square(x+mid); 
-        if(temp == n){
-            return x+mid;
-        }else if(){
-
-        }else{
-
-        }
-        mid = st + (end-st)/2;
+    for(int i=0; i<n; i++){
+        arr[i]++;
     }
 }
 
 int main(){
-    
-    flaot n;
-    cout << "\nEnter a number : ";
-    cin >> n;
 
-    flaot x = binarySearchint(n);
+    int arr[5] = {1,2,3,4,5};
+    int n = 5;
 
-    float res = findPrecision(float(x),float(n));
+    cout << '\n';
+    for(int i=0; i<n; i++){
+        cout << '\t' << arr[i];
+    }
+
+    change(arr,n);
+
+    cout << '\n';
+    for(int i=0; i<n; i++){
+        cout << '\t' << arr[i];
+    }
 
     return 0;
 }

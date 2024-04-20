@@ -1,24 +1,29 @@
 #include <iostream>
 using namespace std;
+string numbers[10] = {"zero","one", "two", "three", "four", "five", "six", "seven","eight","nine"};
 
-string reverseString(string s, int st, int end){
+void sayDigits(int n){
 
-    if(st>end){
-        return s;
+    //base case
+    if(n==0){
+        return;
     }
 
-    swap(s[st], s[end]);
+    int digit = n%10;
 
-    return reverseString(s,st+1,end-1);
+    sayDigits(n/10);
+
+    cout << numbers[digit] << endl;
+
 }
 
 int main(){
 
-    string s = "abcdefg";
-    int st = 0;
-    int end = s.size()-1;
-    cout << reverseString(s, n);
+    int n;
+    cout << "\nEnter a number : ";
+    cin >> n;
+    cout << endl;
+    sayDigits(n);
 
-    
     return 0;
 }

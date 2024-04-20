@@ -1,25 +1,27 @@
 #include <iostream>
 using namespace std;
+// f(n) = f(n/2) * f(n/2) if even
+// f(n) = n * f(n/2) * f(n/2) if odd
 
-int count(int arr[], int n){
-    if(n==0){
-        return arr[n];
+int exponent(int i, int j){
+    if(j==0){
+        return 1;
     }
 
-    int smallerProblem = count(arr+1, n-1);
-    int biggerProblem = arr[0] + smallerProblem;
+    if (j & 1) {
+        return i*exponent(i,j/2)*exponent(i,j/2);
+    } else {
+        return exponent(i,j/2)*exponent(i,j/2);
+    }
 
-    // cout << biggerProblem << endl;
-
-    return biggerProblem;
 }
-
 
 int main(){
 
-    int arr[5] = {10,20,30,40,50};
+    int i=5; 
+    int j=6;
 
-    cout << count(arr,4);
+    cout << i << "^" << j << " = " << exponent(i,j);
 
     return 0;
 }

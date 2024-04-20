@@ -1,33 +1,26 @@
 #include <iostream>
-#include<vector>
 using namespace std;
+
+bool isPalindrome(string& s, int i, int n){
+    if(i > (n-i-1))
+        return true;
+
+    if(s[i] != s[n-i-1]){
+        return false;
+    }
+
+    isPalindrome(s, i+1, n);
+}
 
 int main(){
 
-    vector<int> v;
-    v.push_back(10);
-    v.push_back(20);
-    v.push_back(30);
-    v.push_back(40);
-    v.push_back(50);
-    v.push_back(90);
-    v.push_back(100);
-    v.push_back(230);
+    string s = "aba";
+    int n=3;
 
-    int m = 2;
-
-    int st = m+1;
-    int end = v.size()-1;
-
-    while(st<=end){
-        swap(v[st], v[end]);
-        st++;
-        end--;
-    }
-
-    cout << endl;
-    for(int n:v){
-        cout << "\t" << n;
+    if(isPalindrome(s,0,n)){
+        cout << "Is palindrome!" << endl;
+    }else{
+        cout << "Isn't palindrome!" << endl;
     }
 
     return 0;

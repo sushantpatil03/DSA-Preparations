@@ -26,10 +26,11 @@ int exponent(int i, int j){
         return 1;
     }
 
+    int ans = exponent(i, j/2);
     if (j & 1) {
-        return i*exponent(i,j/2)*exponent(i,j/2);
+        return i*ans*ans;
     } else {
-        return exponent(i,j/2)*exponent(i,j/2);
+        return ans*ans;
     }
 
 }
